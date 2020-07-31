@@ -22,7 +22,7 @@ exports.sms = functions.https.onRequest((request, res) => {
     sms.send(options)
         .then(response => {
             console.log(response);
-            res.send("Success your message has been sent \n" + JSON.stringify(response.SMSMessageData.Recipients[0]));
+            return res.send("Success your message has been sent \n" + JSON.stringify(response.SMSMessageData.Recipients[0]));
 
         })
         .catch(error => {
