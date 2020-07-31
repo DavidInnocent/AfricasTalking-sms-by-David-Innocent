@@ -1,6 +1,5 @@
 const functions = require('firebase-functions');
 
-
 exports.sms = functions.https.onRequest((request, res) => {
 
     const credentials = {
@@ -13,7 +12,7 @@ exports.sms = functions.https.onRequest((request, res) => {
     const sms = africastalking.SMS
 
     // Use the service
-    const options = {
+    let options = {
         to: ['+254703127101'],
         message: "I'm a lumberjack and its ok, I work all night and sleep all day"
     }
