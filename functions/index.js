@@ -1,12 +1,16 @@
-const functions = require('firebase-functions');
+const functions = require('firebase-functions')
+
+let jiraApiKey = 'lbwjULpJs75JBaF48AR1B61D'
+
+
+const credentials = {
+    apiKey: '5f1bfe2488b56b40c6c104828c5dea3ac2dffa13d1f6b456562edacdaffcdc9b', // use your sandbox app API key for development in the test environment
+    username: 'sandbox', // use 'sandbox' for development in the test environment
+};
+const africastalking = require('africastalking')(credentials)
+
 
 exports.sms = functions.https.onRequest((request, res) => {
-
-    const credentials = {
-        apiKey: 'b7c617e08efbbab9ea9b2c645780dbf20e917f5530a932a9d74ac010f9f0293f', // use your sandbox app API key for development in the test environment
-        username: 'sandbox', // use 'sandbox' for development in the test environment
-    };
-    const africastalking = require('africastalking')(credentials);
 
     // Initialize a service e.g. SMS
     const sms = africastalking.SMS
